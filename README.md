@@ -16,15 +16,15 @@ them perfectly from the manifest.
 
  Project Structure
  swiftdeploy/
-├── manifest.yaml                    # Single source of truth
-├── swiftdeploy                      # CLI tool (executable)
-├── Dockerfile                       # Builds the API image
-├── app/
-│   ├── main.py                      # Python Flask API
-│   └── requirements.txt             # Python dependencies
-├── templates/
-│   ├── nginx.conf.template          # Nginx config template
-│   └── docker-compose.yml.template  # Compose template
+manifest.yaml                    # Single source of truth
+swiftdeploy                      # CLI tool (executable)
+Dockerfile                       # Builds the API image
+app/
+main.py                      # Python Flask API
+   └── requirements.txt             # Python dependencies
+templates/
+  ├── nginx.conf.template          # Nginx config template
+  └── docker-compose.yml.template  # Compose template
 └── README.md
 
 
