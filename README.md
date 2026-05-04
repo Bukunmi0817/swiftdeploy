@@ -15,16 +15,16 @@ If the generated files are deleted, running `swiftdeploy init` regenerates
 them perfectly from the manifest.
 
  Project Structure
- swiftdeploy/
-manifest.yaml                    # Single source of truth
-swiftdeploy                      # CLI tool (executable)
-Dockerfile                       # Builds the API image
+swiftdeploy/
+manifest.yaml                    
+swiftdeploy                      
+Dockerfile                       
 app/
-main.py                      # Python Flask API
-   └── requirements.txt             # Python dependencies
+main.py
+   └── requirements.txt             
 templates/
-  ├── nginx.conf.template          # Nginx config template
-  └── docker-compose.yml.template  # Compose template
+  ├── nginx.conf.template
+  └── docker-compose.yml.template  
 └── README.md
 
 
