@@ -21,11 +21,11 @@ swiftdeploy
 Dockerfile                       
 app/
 main.py
-   └── requirements.txt             
+    requirements.txt             
 templates/
-  ├── nginx.conf.template
-  └── docker-compose.yml.template  
-└── README.md
+    nginx.conf.template
+    docker-compose.yml.template  
+README.md
 
 
 # Setup
