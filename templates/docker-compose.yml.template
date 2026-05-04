@@ -1,0 +1,43 @@
+services:
+  app:
+    image: {{ image }}
+    container_name: app
+    environment:
+      - MODE={{ mode }}
+      - APP_VERSION={{ version }}
+      - APP_PORT={{ app_port }}
+    networks:
+      - {{ network_name }}
+    volumes:
+      - {{ logs_volume }}:/app/logs
+    restart: {{ restart_policy }}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:{{ app_port }}/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    cap_drop:
+      - ALL
+    user: appuser
+
+  nginx:
+    image: {{ nginx_image }}
+    container_name: nginx
+    ports:
+      - "{{ nginx_port }}:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - {{ logs_volume }}:/var/log/nginx
+    networks:
+      - {{ network_name }}
+    depends_on:
+      app:
+        condition: service_healthy
+    restart: {{ restart_policy }}
+
+networks:
+  {{ network_name }}:
+    driver: {{ network_driver }}
+
+volumes:
+  {{ logs_volume }}:
