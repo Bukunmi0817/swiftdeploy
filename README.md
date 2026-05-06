@@ -217,3 +217,7 @@ Both config files regenerate automatically.
 
 ## Stable vs Canary
 canary carries a X-mode header on all request while stable does not
+
+## Blog Post
+
+https://medium.com/@adeshipob/built-a-tool-that-builds-the-stack-swiftdeploy-177e6473a7e7
