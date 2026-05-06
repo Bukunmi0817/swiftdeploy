@@ -5,6 +5,9 @@ nginx:
   image: nginx:latest
   port: 8080
   proxy_timeout: 30
+opa:
+  policies_dir: ./policies
+  port: 8181
 services:
   image: swift-deploy-1-node:latest
   mode: stable

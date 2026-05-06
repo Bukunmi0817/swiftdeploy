@@ -1,0 +1,7 @@
+{
+  "min_disk_gb": 10,
+  "max_cpu_load": 2.0,
+  "max_memory_percent": 90,
+  "max_error_rate_percent": 1.0,
+  "max_p99_latency_ms": 500
+}

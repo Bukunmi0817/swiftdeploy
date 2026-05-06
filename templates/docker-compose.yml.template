@@ -35,6 +35,23 @@ services:
         condition: service_healthy
     restart: {{ restart_policy }}
 
+  opa:
+    image: openpolicyagent/opa:latest
+    container_name: opa
+    command:
+      - "run"
+      - "--server"
+      - "--addr=0.0.0.0:8181"
+      - "--set=decision_logs.console=true"
+      - "/policies"
+    ports:
+      - "127.0.0.1:8181:8181"
+    volumes:
+      - ./policies:/policies:ro
+    networks:
+      - {{ network_name }}
+    restart: {{ restart_policy }}
+
 networks:
   {{ network_name }}:
     driver: {{ network_driver }}
